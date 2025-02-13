@@ -1,0 +1,186 @@
+<HTMLQuestion xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2011-11-11/HTMLQuestion.xsd">
+<HTMLContent><![CDATA[
+
+<!-- YOUR HTML BEGINS -->
+<!DOCTYPE html>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.142.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+    
+    <short-instructions>
+      Carefully replicate the structure and connections of the diagram using black pencil and empty white paper.
+    </short-instructions>
+    
+    <full-instructions header="Image Moderation Instructions">
+      <h2>Detailed Instructions</h2>
+      <p>In this task, you will create a hand-drawn version of a provided diagram, which is a graph consisting of nodes and edges. Your goal is to <b>carefully replicate the structure and connections</b> of the diagram using <b>pencil and paper</b>.</p> 
+      
+      <h3>What You Need to Do</h3>
+      <ol>
+        <li><b>Review the provided diagram</b>
+            <ol>
+                <li>You will see an image of a diagram.</li>
+                <li>Carefully examine the shapes, labels, and connections between elements in the diagram.</li>
+            </ol>
+        </li>
+        <li><b>Prepare your materials</b>
+            <ol>
+                <li>Use <b>a blank white sheet of paper</b> (no lines, grids, or designs).</li>
+                <li>Use <b>a black pencil</b> (use pencil so that you can erase mistakes, if needed).</li>
+                <li>Ensure your work area has good lighting and a clean surface to avoid smudges or marks on the paper.</li>
+            </ol>
+        </li>
+        <li><b>Create your drawing</b>
+            <ol>
+                <li><b>Shapes:</b> Replicate the shapes (e.g., round rectangles, ellipses etc) exactly as shown. Be precise in their sizes and proportions.</li>
+                <li><b>Connections:</b> Draw all lines and arrows as they appear in the diagram. Pay close attention to the direction of arrowheads, their placement and shapes.</li>
+                <li><b>Labels:</b> Write all text as it appears in the original diagram. Ensure your handwriting is neat and legible.</li>
+            </ol>        
+        </li>
+        <li><b>Finalize your drawing</b>
+            <ol>
+                <li>Double-check your work to ensure all shapes, labels, and connections are correct.</li>
+                <li>Erase any stray marks or mistakes, leaving the drawing neat and clean.</li>
+            </ol>        
+        </li>
+        <li><b>Take a clear photo of your drawing</b>
+            <ol>
+                <li>Use a smartphone to capture your drawing.</li>
+                <li><b>Framing:</b>
+                    <ol>
+                        <li>Take the photo straight on, so the paper fills most of the frame.</li>
+                        <li>Avoid too much empty space around the edges of the drawing.</li>
+                    </ol> 
+                </li>
+                <li><b>Lighting:</b>
+                    <ol>
+                        <li>Ensure the photo is well-lit with no shadows on the paper.</li>
+                        <li>Use natural or overhead lighting, avoiding direct light that could cause glare.</li>
+                    </ol> 
+                </li>
+                <li><b>Focus:</b> Make sure the photo is sharp and not blurry. All lines, shapes, and labels should be clear and easy to read.</li>
+            </ol>        
+        </li>
+        <li><b>Submit your photo</b>
+            <ol>
+                <li>Upload the image of your drawing in <b>PNG</b> format.</li>
+                <li>Ensure the entire drawing is visible in the image and is not cropped or distorted.</li>
+            </ol>        
+        </li> 
+      </ol>
+      
+        <h3>Note on Accuracy and Redoing Your Drawing</h3>
+        <p>We understand that mistakes can happen while replicating a diagram. If you notice any errors, please follow these guidelines:</p>
+        <p><b>Small Mistakes:</b> If the error is minor (such as an incorrect node shape or small labeling mistake), you can <b>erase and fix</b> the issue neatly. Please ensure that the correction is clean and doesn't leave any smudges or stray marks.</p>
+        <p><b>Major Mistakes:</b> If the error is more significant (e.g., multiple incorrect shapes, multiple incorrect arrowheads, or large deviations from the original), we ask you to <b>redraw</b> the diagram to ensure accuracy.</p>
+        <p>Here are some common issues to watch out for:<p>
+            <ol>
+                <li><b>Shapes:</b> Ensure that all shapes match the original in type and proportions (e.g., circles should be round, rectangles properly drawn).</li>
+                <li><b>Connections:</b> Double-check the direction, shape and positioning of all arrows and lines.</li>
+                <li><b>Labels:</b> Ensure all text is included and legible.</li>
+            </ol>
+        <p>Taking a moment to review and refine your drawing before submission helps us ensure high-quality results and prevents task rejection. Your careful attention to detail is greatly appreciated!</p>
+    
+        <p>A few good examples:</p>
+        <img src="https://github.com/sciluna/image-to-sbgn-analysis/blob/main/dataset/auto-generated/samples/sample1.png?raw=true">
+        <p></p>
+        <img src="https://github.com/sciluna/image-to-sbgn-analysis/blob/main/dataset/auto-generated/samples/sample1_hd.png?raw=true"  style="width:500px; height:500px;">
+        <p>-------</p>
+        <img src="https://github.com/sciluna/image-to-sbgn-analysis/blob/main/dataset/auto-generated/samples/sample2.png?raw=true">
+        <p></p>
+        <img src="https://github.com/sciluna/image-to-sbgn-analysis/blob/main/dataset/auto-generated/samples/sample2_hd.png?raw=true" style="width:600px; height:460px;">
+        <p>-------</p>
+        <img src="https://github.com/sciluna/image-to-sbgn-analysis/blob/main/dataset/auto-generated/samples/sample3.png?raw=true">
+        <p></p>
+        <img src="https://github.com/sciluna/image-to-sbgn-analysis/blob/main/dataset/auto-generated/samples/sample3_hd.png?raw=true" style="width:500px; height:500px;">
+    </full-instructions>
+
+    <div>
+        <img src="${url}">
+        <fieldset id='mturk_form'>
+            <div sytle="padding: 10px;">  
+                <ul>
+                    <li>First read the detailed instructions (Instructions -> More instructions)</li>
+                    <li>Draw the diagram as instructed.</li>
+                    <li>Make sure that your image has exactly 
+                    <ul>
+                        <li>${nodeData} nodes</li>
+                        <li>${edgeData} edges.</li> 
+                    </ul>
+                    <li>If your drawing doesn't have the exact number of given nodes and edges, then you <strong>will not</strong> be paid. Use the reference sheet given <a href=${refCardLink} target="_blank">here</a> to verify the nodes and edges.</li>
+                    <li>Upload your image in PNG format with the name "${filename}"</li>
+                </ul>
+                <p><strong>Note:</strong> You must first upload your image by using "Upload" button and then submit the task by using "Submit" button to complete your task.</p>
+            </div>
+            
+            <div sytle="padding: 10px;">  
+              <input id="file" type="file" value=${filename} accept="image/png" name="drawing" required/>
+              <button id="upload_file_button" type="button">Upload file</button>
+              <span id="status">&nbsp;</span>
+            </div>
+        </fieldset>
+    </div>
+    
+</crowd-form>
+
+<script>
+  let config = {
+    region: 'us-east-1',
+    pool: 'REPLACE WITH YOUR AWS_POOL_ID', 
+    bucket: 'REPLACE WITH THE FOLDER NAME YOU WANT THE FILES TO BE UPLOADED'
+  }
+
+  AWS.config.region = config.region;
+  // Configure the credentials provider to use your identity pool
+  AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+      IdentityPoolId: config.pool,
+  });
+  
+  let s3 = new AWS.S3({
+    apiVersion: '2006-03-01',
+    params: { Bucket: config.bucket },
+  });
+  
+  do_upload = function(event) {
+    // Reset the status indicator and hidden file uploaded flag
+    $("#status").text("Uploading...");
+    $(event.currentTarget).prop("disabled", true);
+
+    let file = $("#file").prop('files')[0];            
+    //let workerId = turkGetParam('workerId');
+    //let assignmentId = turkGetParam('assignmentId');
+    //let hitId = turkGetParam('hitId');
+    let fileKey = file.name;
+    
+    s3.upload({
+      Key: fileKey,
+      Body: file,
+      ContentType: file.type,
+      ACL: 'bucket-owner-full-control'
+    }, function(err, data) {
+      if (err) {
+        alert("Failed to upload. Please contact the Requester.");
+        $("#status").text("");
+      }
+      else{
+        $("#status").text("Success.");
+      }
+      $(event.currentTarget).prop("disabled", false);
+    });
+  };
+  
+  $("#upload_file_button").on("click", do_upload);
+</script>
+<!-- YOUR HTML ENDS -->
+]]>
+</HTMLContent>
+<FrameHeight>600</FrameHeight>
+</HTMLQuestion>
